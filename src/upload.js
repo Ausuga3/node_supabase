@@ -2,7 +2,7 @@ const { createClient } = require('@supabase/supabase-js');
 const fs = require('fs'); // Para leer archivos locales
 
 // Configuración de Supabase
-const supabaseUrl = 'https://jnviodghnkbfitaqtupc.supabase.co'; // Reemplaza con tu URL de Supabase
+const supabaseUrl = process.env.SUPABASE_URL; // Reemplaza con tu URL de Supabase
 const supabaseKey = process.env.SUPABASE_ANON_KEY; // Reemplaza con tu clave pública
 const supabase = createClient(supabaseUrl, supabaseKey);
 
@@ -16,7 +16,7 @@ async function uploadFile(bucketName, filePath, fileName) {
         const { data, error } = await supabase.storage
             .from(bucketName)
             .upload(fileName, fileBuffer, {
-                contentType: 'image/jpeg', // Cambia el tipo MIME según el archivo
+                contentType: 'image/jpeg/png', // Agrega el tipo MIME según el archivo
             });
 
         if (error) {
@@ -29,7 +29,5 @@ async function uploadFile(bucketName, filePath, fileName) {
     }
 }
 
-// Llamar a la función
-uploadFile('mi-bucket', './public/assets/imagen_prueba.jpeg', 'imagen_prueba.jpeg');
 
 module.exports = { uploadFile };

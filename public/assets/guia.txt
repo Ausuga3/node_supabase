@@ -1,0 +1,13 @@
+1- Registrarse en supabase.
+2- Crear nuevo proyecto.
+3- En View Api Settings extraes tu URL y tu anon Public.
+4- En el menu izquierdo vas a Storage y creas un nuevo bucket
+5- Creas nuevas politicas 
+    En el proyecto vas a View Api settings -nombre distintivo (upload allow) - agregas INSERT y en target roles pones  anon y authenticated
+---------------------------------------
+6- En en proyecto se instala el cliente de supabase (npm i @supabase/supabase-js)
+7- En src se crea el archivo upload.js
+
+
+
+
