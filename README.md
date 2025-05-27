@@ -86,24 +86,34 @@ Las contribuciones son bienvenidas. Si deseas contribuir, por favor abre un issu
 
 
 
-IDEAS:
-1. Listar archivos subidos
-Mostrar en tu web una galería de imágenes o archivos almacenados en tu bucket de Supabase.
-2. Eliminar archivos
-Permitir a los usuarios borrar archivos del bucket desde la aplicación.
-3. Descargar archivos
-Agregar enlaces para que los usuarios puedan descargar los archivos almacenados.
-4. Control de acceso
-Implementar autenticación para que solo usuarios registrados puedan subir, ver o borrar archivos.
-5. Soporte para otros tipos de archivos
-Permitir la subida de documentos PDF, videos, audios, etc., y mostrar una vista previa según el tipo.
-6. Renombrar archivos
-Permitir a los usuarios cambiar el nombre de los archivos ya subidos.
-7. Guardar metadatos en la base de datos
-Guardar información adicional sobre cada archivo (usuario, fecha de subida, descripción, etc.) en MongoDB.
-8. Optimización de imágenes
-Comprimir o redimensionar imágenes antes de subirlas para ahorrar espacio y ancho de banda.
-9. Notificaciones
-Enviar un correo o una notificación cuando se suba un archivo nuevo.
-10. Historial de subidas
-Mostrar a cada usuario un historial de los archivos que ha subido.
+1- Registrarse en Supabase.
+2- Crear un nuevo proyecto.
+3- En "View API Settings" extraer tu URL y tu anon Public Key.
+4- En el menú izquierdo ir a "Storage" y crear un nuevo bucket (por ejemplo, mi-bucket).
+5- Crear nuevas políticas:
+    - En "Storage > Policies" crea una política (por ejemplo, "upload allow").
+    - Agrega permiso INSERT y en "target roles" pon anon y authenticated.
+---------------------------------------
+6- En el proyecto, instalar el cliente de Supabase:
+    npm i @supabase/supabase-js
+
+7- En la carpeta src, crear el archivo upload.js con la lógica para subir archivos a Supabase.
+8- Usar la URL y la Key de Supabase en el archivo upload.js y configurar el tipo de archivo que se va a subir.
+    ![imagen ejemplo](public/assets/capturas/crear_upload.png)
+    
+9- Crear la carpeta uploads para guardar los archivos temporalmente.
+10- Instalar Multer para manejar la subida de archivos:
+    npm i multer
+11- Configurar Express y Multer en src/index.js para recibir archivos desde un formulario.
+12- Crear un formulario HTML en public/formulario.html para probar la subida.
+13- Instalar dotenv para manejar variables de entorno:
+    npm i dotenv
+14- Crear un archivo .env en la raíz del proyecto y agregar tus variables:
+    PORT=8080
+    SUPABASE_URL=tu_url_de_supabase
+    SUPABASE_ANON_KEY=tu_anon_key
+15- En src/index.js, cargar las variables de entorno usando require('dotenv').config();
+16- Iniciar el servidor con:
+    npm run dev
+17- Abrir el navegador en http://localhost:8080/formulario.html y probar la subida de archivos.
+18- Verificar en el panel de Supabase que el archivo se haya subido correctamente al bucket.
