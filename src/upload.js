@@ -2,8 +2,8 @@ const { createClient } = require('@supabase/supabase-js');
 const fs = require('fs'); // Para leer archivos locales
 
 // Configuración de Supabase
-const supabaseUrl = process.env.SUPABASE_URL; // Reemplaza con tu URL de Supabase
-const supabaseKey = process.env.SUPABASE_ANON_KEY; // Reemplaza con tu clave pública
+const supabaseUrl = process.env.SUPABASE_URL; // URL de Supabase
+const supabaseKey = process.env.SUPABASE_ANON_KEY; // clave pública
 const supabase = createClient(supabaseUrl, supabaseKey);
 
 // Función para cargar un archivo
@@ -16,7 +16,7 @@ async function uploadFile(bucketName, filePath, fileName) {
         const { data, error } = await supabase.storage
             .from(bucketName)
             .upload(fileName, fileBuffer, {
-                contentType: 'image/jpeg/png', // Agrega el tipo MIME según el archivo
+                contentType: 'image/jpeg/png', // Agrega el tipo de
             });
 
         if (error) {

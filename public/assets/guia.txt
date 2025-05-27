@@ -1,13 +1,29 @@
-1- Registrarse en supabase.
-2- Crear nuevo proyecto.
-3- En View Api Settings extraes tu URL y tu anon Public.
-4- En el menu izquierdo vas a Storage y creas un nuevo bucket
-5- Creas nuevas politicas 
-    En el proyecto vas a View Api settings -nombre distintivo (upload allow) - agregas INSERT y en target roles pones  anon y authenticated
+1- Registrarse en Supabase.
+2- Crear un nuevo proyecto.
+3- En "View API Settings" extraer tu URL y tu anon Public Key.
+4- En el menú izquierdo ir a "Storage" y crear un nuevo bucket (por ejemplo, mi-bucket).
+5- Crear nuevas políticas:
+    - En "Storage > Policies" crea una política (por ejemplo, "upload allow").
+    - Agrega permiso INSERT y en "target roles" pon anon y authenticated.
 ---------------------------------------
-6- En en proyecto se instala el cliente de supabase (npm i @supabase/supabase-js)
-7- En src se crea el archivo upload.js
-
-
-
+6- En el proyecto, instalar el cliente de Supabase:
+    npm i @supabase/supabase-js
+7- En la carpeta src, crear el archivo upload.js con la lógica para subir archivos a Supabase.
+8- Usar la URL y la Key de Supabase en el archivo upload.js y configurar el tipo de archivo que se va a subir.
+9- Crear la carpeta uploads para guardar los archivos temporalmente.
+10- Instalar Multer para manejar la subida de archivos:
+    npm i multer
+11- Configurar Express y Multer en src/index.js para recibir archivos desde un formulario.
+12- Crear un formulario HTML en public/formulario.html para probar la subida.
+13- Instalar dotenv para manejar variables de entorno:
+    npm i dotenv
+14- Crear un archivo .env en la raíz del proyecto y agregar tus variables:
+    PORT=8080
+    SUPABASE_URL=tu_url_de_supabase
+    SUPABASE_ANON_KEY=tu_anon_key
+15- En src/index.js, cargar las variables de entorno usando require('dotenv').config();
+16- Iniciar el servidor con:
+    npm run dev
+17- Abrir el navegador en http://localhost:8080/formulario.html y probar la subida de archivos.
+18- Verificar en el panel de Supabase que el archivo se haya subido correctamente al bucket.
 
