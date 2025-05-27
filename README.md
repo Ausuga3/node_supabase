@@ -80,3 +80,30 @@ Luego abre [http://localhost:8080/formulario.html](http://localhost:8080/formula
 ## Contribuciones
 
 Las contribuciones son bienvenidas. Si deseas contribuir, por favor abre un issue o envía un pull request.
+
+
+
+
+
+
+IDEAS:
+1. Listar archivos subidos
+Mostrar en tu web una galería de imágenes o archivos almacenados en tu bucket de Supabase.
+2. Eliminar archivos
+Permitir a los usuarios borrar archivos del bucket desde la aplicación.
+3. Descargar archivos
+Agregar enlaces para que los usuarios puedan descargar los archivos almacenados.
+4. Control de acceso
+Implementar autenticación para que solo usuarios registrados puedan subir, ver o borrar archivos.
+5. Soporte para otros tipos de archivos
+Permitir la subida de documentos PDF, videos, audios, etc., y mostrar una vista previa según el tipo.
+6. Renombrar archivos
+Permitir a los usuarios cambiar el nombre de los archivos ya subidos.
+7. Guardar metadatos en la base de datos
+Guardar información adicional sobre cada archivo (usuario, fecha de subida, descripción, etc.) en MongoDB.
+8. Optimización de imágenes
+Comprimir o redimensionar imágenes antes de subirlas para ahorrar espacio y ancho de banda.
+9. Notificaciones
+Enviar un correo o una notificación cuando se suba un archivo nuevo.
+10. Historial de subidas
+Mostrar a cada usuario un historial de los archivos que ha subido.

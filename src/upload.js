@@ -16,7 +16,7 @@ async function uploadFile(bucketName, filePath, fileName) {
         const { data, error } = await supabase.storage
             .from(bucketName)
             .upload(fileName, fileBuffer, {
-                contentType: 'image/jpeg/png', // Agrega el tipo de
+                contentType: 'image/jpeg/png', // Agrega el tipo de archivo
             });
 
         if (error) {

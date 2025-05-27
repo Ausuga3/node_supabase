@@ -8,6 +8,7 @@
 ---------------------------------------
 6- En el proyecto, instalar el cliente de Supabase:
     npm i @supabase/supabase-js
+
 7- En la carpeta src, crear el archivo upload.js con la lógica para subir archivos a Supabase.
 8- Usar la URL y la Key de Supabase en el archivo upload.js y configurar el tipo de archivo que se va a subir.
 9- Crear la carpeta uploads para guardar los archivos temporalmente.
