@@ -133,3 +133,8 @@ Las contribuciones son bienvenidas. Si deseas contribuir, por favor abre un issu
     npm run dev
 - 16:  Abrir el navegador en http://localhost:8080/formulario.html y probar la subida de archivos.
 - 18: Verificar en el panel de Supabase que el archivo se haya subido correctamente al bucket.
+
+
+Extra!!
+- npm install mime-types (para subir cualquier tipo de archivos)
+
